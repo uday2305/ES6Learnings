@@ -37,3 +37,11 @@ function get(url) {
 function getJson(url) {
   return get(url).then(JSON.parse);
 }
+
+var storyDiv = document.querySelector('.content_container');
+
+function addHtmlToPage(content) {
+  var div = document.createElement('div');
+  div.innerHTML = content;
+  storyDiv.appendChild(div);
+}
