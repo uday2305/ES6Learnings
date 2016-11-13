@@ -1,8 +1,11 @@
 {
+  "heading":"marksinfo",
+  "details":{
   "social":80,
   "science":70,
   "maths":90,
   "english":75,
   "telugu":80,
   "hindi":72
+  }
 }

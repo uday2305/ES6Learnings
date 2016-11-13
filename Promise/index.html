@@ -16,7 +16,22 @@
       <script>
          document.querySelector('.progressing').style.display = 'block';
           getJson('userdetails.json').then(function(userDetails) {
-           addHtmlToPage(userDetails.firstname);
+           addHtmlToPage("Details of  "+userDetails.firstname);
+              // Map our array of user details urls
+              // to an array of info json promises
+                return userDetails.details.map(getJson).reduce(function(chain, indDetailsPromise) {
+                    // Use reduce to chain the promises together,
+                    // but adding content to the page for each chapter
+                    return chain.then(function() {
+                        return indDetailsPromise;
+                      }).then(function(indDetails) {
+                         addHtmlToPage(indDetails.heading);
+                          let detailsArray =indDetails.details ;
+                         Object.keys(detailsArray).map(function(info) {
+                           addTextToPage(info+" :::::: "+detailsArray[info]);
+                          });
+                    });
+                  }, Promise.resolve());
          }).then(function() {
             console.log("All done");
           }).catch(function(err) {

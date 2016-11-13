@@ -45,3 +45,9 @@ function addHtmlToPage(content) {
   div.innerHTML = content;
   storyDiv.appendChild(div);
 }
+
+function addTextToPage(content) {
+  var p = document.createElement('p');
+  p.textContent = content;
+  storyDiv.appendChild(p);
+}

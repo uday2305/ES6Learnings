@@ -1,4 +1,7 @@
 {
-"lastname":"Pulavarthi",
-"dob":"23051990"
+"heading":"personalinfo",
+"details":{
+  "familyName":"Pulavarthi",
+  "dob":"23-05-1990"
+  }
 }
