@@ -1,3 +1,9 @@
+.content_container div{
+  color: #FF0000;
+  font-family: arial;
+  font-size: 1.12em;
+  font-weight: bold;
+}
 .progressing {
   width: 100%;
   height: 100%;

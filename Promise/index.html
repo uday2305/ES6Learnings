@@ -21,7 +21,7 @@
               // to an array of info json promises
                 return userDetails.details.map(getJson).reduce(function(chain, indDetailsPromise) {
                     // Use reduce to chain the promises together,
-                    // but adding content to the page for each chapter
+                    // but adding content to the page for each Details
                     return chain.then(function() {
                         return indDetailsPromise;
                       }).then(function(indDetails) {
