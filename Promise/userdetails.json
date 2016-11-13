@@ -1,5 +1,7 @@
 {
 "firstname":"Uday",
-"lastname":"Pulavarthi",
-"dob":"23051990"
+"details":[
+  "marks.json",
+  "personalinfo.json"
+]
 }
