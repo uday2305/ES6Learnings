@@ -29,7 +29,7 @@ function get(url) {
   });
 
   return requestPromise.then(function(results) {
-    return results[1];
+    return results;
   });
 }
 
