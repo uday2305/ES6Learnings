@@ -1,6 +1,17 @@
+function wait(ms) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, ms);
+  });
+}
 function get(url) {
   // Return a new promise.
   // We do all the work within the constructor callback.
+  var fakeSlowNetwork=0;
+  /*if(url==="marks.json")
+  {
+    fakeSlowNetwork = 1;
+  }*/
+  var fakeNetworkWait = wait(3000 * Math.random() * fakeSlowNetwork);
   var requestPromise = new Promise(function(resolve, reject) {
     // Do the usual XHR stuff
     var req = new XMLHttpRequest();
@@ -28,9 +39,9 @@ function get(url) {
     req.send();
   });
 
-  return requestPromise.then(function(results) {
-    return results;
-  });
+  return Promise.all([fakeNetworkWait, requestPromise]).then(function(results) {
+   return results[1];
+ });
 }
 
 
